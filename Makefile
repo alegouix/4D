@@ -19,7 +19,7 @@ $(BINPATH)/engine: $(BINPATH)/main.o
 $(BINPATH)/main.o: $(SRCPATH)/main.* $(BINPATH)/engine.o
 	$(CC) -c ${CFLAGS} $(SRCPATH)/main.c -o $(BINPATH)/main.o
 
-$(BINPATH)/engine.o: $(BINPATH)/point.o $(BINPATH)/draw.o
+$(BINPATH)/engine.o: $(BINPATH)/point.o $(BINPATH)/draw.o $(BINPATH)/model.o
 	
 
 $(BINPATH)/point.o: $(SRCPATH)/point.*
@@ -27,6 +27,9 @@ $(BINPATH)/point.o: $(SRCPATH)/point.*
 
 $(BINPATH)/draw.o: $(SRCPATH)/draw.* $(BINPATH)/point.o
 	$(CC) -c ${CFLAGS} $(SRCPATH)/draw.c -o $(BINPATH)/draw.o
+
+$(BINPATH)/model.o: $(SRCPATH)/model.* $(BINPATH)/model.o
+	$(CC) -c ${CFLAGS} $(SRCPATH)/model.c -o $(BINPATH)/model.o
 
 $(BINPATH)/utils.o: $(SRCPATH)/utils.*
 	$(CC) -c ${CFLAGS} $(SRCPATH)/utils.c -o $(BINPATH)/utils.o

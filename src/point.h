@@ -1,3 +1,7 @@
+#ifndef _POINT
+#define _POINT 1
+#include <SDL2/SDL.h>
+
 typedef struct{
     double x,y,z,w;
 } Point4D;
@@ -11,3 +15,5 @@ Point4D RotateXZ(Point4D point, double angle);
 Point4D RotateXW(Point4D point, double angle);
 Point4D RotateYW(Point4D point, double angle);
 Point4D RotateZW(Point4D point, double angle);
+
+#endif
