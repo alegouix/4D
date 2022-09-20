@@ -111,7 +111,7 @@ int read_number(char* line, int i, double *res){
             break;
 
         case 46: // .
-            if (1){
+            if (f){
                 run = 0;
                 break;
             }
@@ -164,7 +164,7 @@ int load_wireframe_model(char* filename, Point4D** points, int*** lines, int* n_
             // printf("%f, %d\n", y, i);
             i = read_number(line, i, &z);
             i = read_number(line, i, &w);
-            // printf("%f, %d\n", z, i);
+            printf("%f, %f, %f, %f, %d\n", x, y, z, w, i);
             // printf("%p\n", *points);
             // printf("%d\n", np-1);
             // printf("%p\n", (*points)[0]);

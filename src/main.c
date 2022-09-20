@@ -39,7 +39,7 @@ int mainloop(SDL_Window* screen, SDL_Renderer* renderer){
     int n_lines;// = 32;
     int **lines;// = (int**)calloc(n_lines, sizeof(int*));
 
-    load_wireframe_model("models/tesseract.wire", &points, &lines, &n_points, &n_lines);
+    load_wireframe_model("models/simplex.wire", &points, &lines, &n_points, &n_lines);
 
     double rotation[6];
     int t = 0;
@@ -62,12 +62,12 @@ int mainloop(SDL_Window* screen, SDL_Renderer* renderer){
         //     points[i].x += cos(t/(100.+(double)(i+100)))*1;
         // }
 
-        // rotation[0] = t/300.;
-        // rotation[1] = t/100.;
+        rotation[0] = t/300.;
+        rotation[1] = t/100.;
         rotation[2] = t/300.;
-        rotation[3] = -t/300.;
-        // rotation[4] = t/100.;
-        // rotation[5] = t/100.;
+        rotation[3] = t/300.;
+        rotation[4] = t/300.;
+        rotation[5] = t/300.;
 
         // printf("start DrawfFrame\n");
         DrawFrame(renderer, points, n_points, lines, n_lines, rotation);
